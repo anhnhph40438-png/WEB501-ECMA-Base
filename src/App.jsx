@@ -1,20 +1,19 @@
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Toaster } from "react-hot-toast";
 import { useState } from "react";
+import List from "./pages/List";
+import Add from "./pages/Add";
 
 function App() {
   const [open, setOpen] = useState(false);
 
   return (
-    <>
-      {/* HEADER - Navbar Tailwind */}
+    <BrowserRouter>
       <nav className="bg-blue-600 text-white shadow">
         <div className="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
-          {/* Brand */}
-          <a href="#" className="text-xl font-semibold">
+          <a href="/" className="text-xl font-semibold">
             <strong>WEB501 App</strong>
           </a>
-
-          {/* Mobile toggle */}
           <button
             onClick={() => setOpen(!open)}
             className="md:hidden block focus:outline-none"
@@ -41,63 +40,56 @@ function App() {
               )}
             </svg>
           </button>
-
-          {/* Menu desktop */}
           <div className="hidden md:flex items-center space-x-8">
-            <a href="#" className="hover:text-gray-200">
+            <a href="/" className="hover:text-gray-200">
               Trang chủ
             </a>
-            <a href="#" className="hover:text-gray-200">
+            <a href="/list" className="hover:text-gray-200">
               Danh sách
             </a>
-            <a href="#" className="hover:text-gray-200">
+            <a href="/add" className="hover:text-gray-200">
               Thêm mới
             </a>
           </div>
-
-          {/* Right menu desktop */}
           <div className="hidden md:flex items-center space-x-6">
-            <a href="#" className="hover:text-gray-200">
+            <a href="/signup" className="hover:text-gray-200">
               Đăng nhập
             </a>
-            <a href="#" className="hover:text-gray-200">
+            <a href="signin" className="hover:text-gray-200">
               Đăng ký
             </a>
           </div>
         </div>
-
-        {/* Mobile dropdown */}
         {open && (
           <div className="md:hidden bg-blue-700 border-t border-blue-500">
             <div className="px-4 py-3 space-y-2">
-              <a href="#" className="block hover:text-gray-200">
+              <a href="/" className="block hover:text-gray-200">
                 Trang chủ
               </a>
-              <a href="#" className="block hover:text-gray-200">
+              <a href="/list" className="block hover:text-gray-200">
                 Danh sách
               </a>
-              <a href="#" className="block hover:text-gray-200">
-                Thêm mới
+              <a href="/add" className="block hover:text-gray-200">
+                Thêm tour mới
               </a>
-              <a href="#" className="block hover:text-gray-200">
+              <a href="/signup" className="block hover:text-gray-200">
                 Đăng nhập
               </a>
-              <a href="#" className="block hover:text-gray-200">
+              <a href="/signin" className="block hover:text-gray-200">
                 Đăng ký
               </a>
             </div>
           </div>
         )}
       </nav>
-
-      {/* MAIN CONTENT */}
-      <div className="max-w-6xl mx-auto mt-10 px-4 text-center">
-        <h1 className="text-4xl font-bold mb-4">Chào mừng đến với WEB501</h1>
-        <p className="text-lg text-gray-600">Ứng dụng quản lý dữ liệu</p>
+      <div className="max-w-6xl mx-auto mt-10 px-4">
+        <Routes>
+          <Route path="/list" element={<List />} />
+          <Route path="/add" element={<Add />} />
+        </Routes>
       </div>
-
       <Toaster />
-    </>
+    </BrowserRouter>
   );
 }
 
