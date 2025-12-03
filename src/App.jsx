@@ -4,6 +4,8 @@ import { useState } from "react";
 import List from "./pages/List";
 import Add from "./pages/Add";
 import Edit from "./pages/Edit";
+import Login from "./pages/Login";
+import Register from "./pages/Register";
 
 function App() {
   const [open, setOpen] = useState(false);
@@ -53,10 +55,10 @@ function App() {
             </a>
           </div>
           <div className="hidden md:flex items-center space-x-6">
-            <a href="/signin" className="hover:text-gray-200">
+            <a href="/login" className="hover:text-gray-200">
               Đăng nhập
             </a>
-            <a href="signup" className="hover:text-gray-200">
+            <a href="register" className="hover:text-gray-200">
               Đăng ký
             </a>
           </div>
@@ -73,10 +75,10 @@ function App() {
               <a href="/add" className="block hover:text-gray-200">
                 Thêm tour mới
               </a>
-              <a href="/signin" className="block hover:text-gray-200">
+              <a href="/login" className="block hover:text-gray-200">
                 Đăng nhập
               </a>
-              <a href="/signup" className="block hover:text-gray-200">
+              <a href="/register" className="block hover:text-gray-200">
                 Đăng ký
               </a>
             </div>
@@ -92,6 +94,8 @@ function App() {
           <Route path="/list" element={<List />} />
           <Route path="/add" element={<Add />} />
           <Route path="/edit/:id" element={<Edit />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
         </Routes>
       </div>
       <Toaster />
