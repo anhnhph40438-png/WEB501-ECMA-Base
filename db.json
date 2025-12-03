@@ -36,5 +36,22 @@
       "active": true,
       "id": 6
     }
+  ],
+  "users": [
+    {
+      "email": "admin1@gmail.com",
+      "password": "$2a$10$yBnYSUsMPWzKu0y4Ch72zudoytxCjE2JzXJ9ZdCQLFVshwYE0aoj.",
+      "id": 1
+    },
+    {
+      "email": "anhnhph40438@fpt.edu.vn",
+      "password": "$2a$10$dX364/JHISIG.KDvRNdiUePqGG9bxhMDlHjgjMyauVjBjmZ/KtGsS",
+      "id": 2
+    },
+    {
+      "email": "cubutodai123@gmai.com",
+      "password": "$2a$10$aPa6iVYYhTW05dHarnZv8uvJzWjGb1q39jfkoThnnBZ8zFIQ90Ye.",
+      "id": 3
+    }
   ]
 }

@@ -11,14 +11,10 @@ function Register() {
     password: "",
     confirmPassword: "",
   });
-
-  // handleChange
   const handleChange = (e) => {
     const { name, value } = e.target;
     setUser({ ...user, [name]: value });
   };
-
-  // Submit
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -54,7 +50,6 @@ function Register() {
         </h2>
 
         <form onSubmit={handleSubmit} className="space-y-5">
-          {/* Email */}
           <div>
             <label className="block font-medium mb-1">Email</label>
             <input
@@ -66,8 +61,6 @@ function Register() {
               required
             />
           </div>
-
-          {/* Password */}
           <div>
             <label className="block font-medium mb-1">Mật khẩu</label>
             <input
@@ -79,8 +72,6 @@ function Register() {
               required
             />
           </div>
-
-          {/* Confirm Password */}
           <div>
             <label className="block font-medium mb-1">Xác nhận mật khẩu</label>
             <input
